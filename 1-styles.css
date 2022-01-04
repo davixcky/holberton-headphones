@@ -1,0 +1,456 @@
+/* Reset / Normalize
+  ============================= */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    display: block;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+a {
+    background-color: transparent;
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline dotted;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+img {
+    border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+    -webkit-appearance: button;
+}
+
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+}
+
+progress {
+    vertical-align: baseline;
+}
+
+textarea {
+    overflow: auto;
+}
+
+[type=checkbox],
+[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+details {
+    display: block;
+}
+
+summary {
+    display: list-item;
+}
+
+template {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+/* Fonts
+  ============================= */
+@font-face {
+    font-family: 'sans-pro';
+    src:  url('./fonts/SourceSansPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+/* Variables
+  ============================= */
+:root {
+    --font-family_primary: sans-pro;
+    --primary-color: white;
+    --secondary-color: #071629;
+    --button-primary-color: #ff6565;
+}
+
+/* Global Styles
+  ============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100vw;
+    font-family: var(--font-family_primary);
+}
+
+/* Header
+  ============================= */
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__navbar {
+    background: transparent;
+    position: absolute;
+    z-index: 3;
+}
+
+.header__navbar_input {
+    display: none;
+}
+
+.header__navbar_input:checked + .hamburger-menu .linea_up--rotate-right {
+    position: relative;
+    top: 6.5px;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.header__navbar_input:checked + .hamburger-menu .linea--hidden {
+    background: transparent;
+}
+
+.header__navbar_input:checked + .hamburger-menu .linea_down--rotate-left {
+    position: relative;
+    top: -6.5px;
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease;
+}
+
+.header__navbar_input:checked ~ .options_links .list_item {
+    padding-top: 40px;
+    transition: all 0.3s ease;
+}
+
+.header__navbar_input:checked ~ .options_links .list_item--link {
+    color: white;
+    text-decoration: none;
+}
+
+.header__navbar_label {
+    display: inline-block;
+    position: relative;
+    top: 34px;
+    left: 29px;
+}
+
+.header__navbar_label .hamburger_menu_linea {
+    margin: 4px 4px;
+    display: block;
+    background: var(--primary-color);
+    user-select: none;
+    width: 15px;
+    height: 2.5px;
+    transition: transform 0.2s ease;
+}
+
+.header__navbar_label .linea_up--rotate-left, .header__navbar_label .linea_down--rotate-right {
+    width: 20px;
+}
+
+.header__navbar_options {
+    text-align: center;
+    list-style: none;
+}
+
+.header__navbar_options li {
+    padding-top: 7px;
+    line-height: 1px;
+}
+
+.header__navbar_options li a {
+    color: transparent;
+}
+
+.header__navbar_logo {
+    display: block;
+    width: 100vw;
+    text-align: center;
+}
+
+.header__navbar_logo_imagen {
+    max-width: 161px;
+}
+
+/* Hero Section
+  ============================= */
+.hero {
+    width: 100%;
+    text-align: center;
+}
+
+.hero__body {
+    max-height: 900px;
+    padding: 0;
+}
+
+.hero__body_image {
+    display: block;
+    width: 100vw;
+    height: 869px;
+    background-image: url("./images/headphones_hero_1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 30%;
+}
+
+.hero__body_info {
+    max-width: 1440px;
+    position: relative;
+    top: -500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 8%;
+    padding-right: 8%;
+    color: var(--primary-color);
+}
+
+.hero__body_info .button {
+    margin: 30px auto 60px;
+    padding: 15px 15px;
+    width: 160px;
+    border-radius: 30px;
+    background: var(--button-primary-color);
+    color: var(--primary-color);
+    border: none;
+}
+
+.hero__body_info .button:hover {
+    opacity: 0.8;
+}
+
+/* What We do section
+  ============================= */
+.what_we_do {
+    padding: 25px;
+    text-align: center;
+}
+
+.what_we_do_header h2 {
+    padding: 60px 30px;
+    z-index: 30;
+}
+
+.what_we_do_body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.what_we_do_body .card {
+    flex-basis: 300px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    line-height: 30px;
+}
+
+
+/* Tablet view Styles
+  ============================= */
+@media screen and (min-width: 767px) {
+    .header__navbar {
+        top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100vw;
+        padding: 0 9% 0 9%;
+        box-sizing: border-box;
+    }
+
+    .header__navbar_input, .header__navbar_label {
+        display: none;
+    }
+
+    .header__navbar_logo {
+        flex-basis: 50%;
+        text-align: left;
+    }
+
+    .header__navbar_logo_imagen {
+        max-width: 161px;
+    }
+
+    .header__navbar_options {
+        flex-basis: 50%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .header__navbar_options .list_item .list_item--link {
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    .header__navbar_options .list_item .list_item--link:hover {
+        color: #ff6565;
+    }
+
+    .hero__body_info {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .what_we_do_header {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+/* Desktop view Styles
+  ============================= */
+@media screen and (min-width: 1440px) {
+    .header__navbar {
+        max-width: 1440px;
+    }
+
+    .hero__body_info {
+        margin: 0 auto;
+        padding-left: 400px;
+        padding-right: 400px;
+    }
+
+    .what_we_do_header {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding-left: 400px;
+        padding-right: 400px;
+    }
+}
